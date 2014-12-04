@@ -16,12 +16,15 @@ int main(void)
 unsigned rightrot(unsigned x,int n)
 {
 	int wordlength(void);
-	unsigned rbit;/* rightmost bit */
-	
-	rbit = x << (wordlength() - n);
-   	x = x >> n;
-   	x = x | rbit;
-   	
+	int rbit;  /* rightmost bit */
+
+	while(n-- > 0)
+	{
+		rbit = (x & 1) << (wordlength()-1);
+		x = x >> 1;
+		x = x | rbit;
+
+	}
 	return x;
 }
 
